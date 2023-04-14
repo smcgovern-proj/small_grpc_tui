@@ -1,0 +1,16 @@
+syntax = "proto3";
+package latencies;
+
+service LatencyFetcher {
+    rpc GetLatency (LatencyRequest) returns (LatencyResponse);
+    rpc GetLatencyStream (LatencyStreamRequest) returns (stream LatencyResponse)
+}
+
+message LatencyRequest {
+    string service = 1;
+}
+
+message LatencyResponse {
+    string service = 1;
+    float responseTime = 2;
+}
