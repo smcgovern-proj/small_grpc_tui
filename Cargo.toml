@@ -3,6 +3,18 @@ name = "small_grpc_tui"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]] 
+name = "server"
+path = "src/server.rs"
+
+[[bin]] 
+name = "client"
+path = "src/client.rs"
 
 [dependencies]
+tonic = "0.9"
+prost = "0.11"
+tokio = { version = "1.0", features = ["full"] }
+
+[build-dependencies]
+tonic-build = "0.9"

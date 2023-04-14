@@ -3,10 +3,14 @@ package latencies;
 
 service LatencyFetcher {
     rpc GetLatency (LatencyRequest) returns (LatencyResponse);
-    rpc GetLatencyStream (LatencyStreamRequest) returns (stream LatencyResponse)
+    rpc GetLatencyStream (LatencyStreamRequest) returns (stream LatencyResponse);
 }
 
 message LatencyRequest {
+    string service = 1;
+}
+
+message LatencyStreamRequest {
     string service = 1;
 }
 
